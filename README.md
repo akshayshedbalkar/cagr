@@ -13,6 +13,6 @@ Some assumptions are made in the code for fixed costs which are:
 2. Inflation: set at 3% which is a realistic value in Germany over past few years
 
 3. Fees: This one is harder to assume. Index funds can have fees as low as 0.01%, while actively manages funds can go as high as 2%. Stocks have buying, selling and exchange fees. Further, many banks/ brokers charge for the account itself. This charge might be waived if regular transactions are made. 
-A value of 0.2% is set here considering a reasonable average from all these factors. 
+A value of 0.2% is set here. This is a reasonable value considering all these factors. 
 
 The assumptions can be changed in main.c
