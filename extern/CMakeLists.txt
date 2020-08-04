@@ -1,5 +1,7 @@
 ##Following subdirectories are part of the project
-# add_subdirectory(fund)
+add_subdirectory(include)
+add_subdirectory(lib)
+# add_subdirectory(utility)
 
 ##All .h files in this directory are to be included
 target_include_directories(cagr 
@@ -8,10 +10,10 @@ target_include_directories(cagr
 )
 
 ##List here the source files in current directory (Good way to include sources)
-target_sources(cagr 
-    PRIVATE 
-        utility.cpp
-)
+# target_sources(cagr 
+#     PRIVATE 
+#         main.cpp
+# )
 
 ##All .cpp files in this directory are source files (Quick and dirty way to include sources)
 # file(GLOB SOURCES "*.cpp")

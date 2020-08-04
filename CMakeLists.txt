@@ -12,6 +12,7 @@ add_executable(cagr src/main.cpp)
 
 ##Subdirectories which are part of the project
 add_subdirectory(src)
+add_subdirectory(extern)
 
 ##Compiler defines, options and features
 target_compile_features(cagr 
@@ -28,10 +29,10 @@ target_compile_features(cagr
 #  )
 
 ##Linker options, external libraries/objects to link against
-# target_link_libraries(cagr 
-#      PRIVATE 
-#          blabla
-#  )
+target_link_libraries(cagr 
+     PRIVATE 
+        ${CMAKE_SOURCE_DIR}/extern/lib/libutility.a
+ )
 # target_link_options(cagr 
 #      PRIVATE 
 #          blabla
