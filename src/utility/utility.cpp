@@ -29,20 +29,20 @@ std::string utility::insert_commas(double number) {
     return s_number;
 }
 
-bool utility::is_int(std::string input) {
+bool utility::is_int(const std::string &input) {
     int length{(int)input.size()};
 
     for (int i{0}; i < length; i++) {
-        if (!isdigit(input[i])) {
+        if (!std::isdigit(input[i])) {
             return false;
         }
     }
     return true;
 }
 
-bool utility::is_double(std::string input) {
+bool utility::is_double(const std::string &input) {
     int length{(int)input.size()};
-    int dotcount = 0;
+    int dotcount{0};
 
     if (input == ".") {
         return false;
@@ -54,14 +54,14 @@ bool utility::is_double(std::string input) {
             if (dotcount > 1) {
                 return false;
             }
-        } else if (!isdigit(input[i])) {
+        } else if (!std::isdigit(input[i])) {
             return false;
         }
     }
     return true;
 }
 
-int utility::get_int() {
+void utility::get_int(int &number) {
     std::string input;
     std::getline(std::cin, input);
 
@@ -69,10 +69,10 @@ int utility::get_int() {
         std::cout << "Bad input! Please enter an integer: ";
         std::getline(std::cin, input);
     }
-    return std::stod(input.c_str());
+    number = std::stod(input.c_str());
 }
 
-double utility::get_double() {
+void utility::get_double(double &number) {
     std::string input;
     std::getline(std::cin, input);
 
@@ -80,5 +80,5 @@ double utility::get_double() {
         std::cout << "Bad input! Please enter a floating point number: ";
         std::getline(std::cin, input);
     }
-    return std::stod(input);
+    number = std::stod(input);
 }

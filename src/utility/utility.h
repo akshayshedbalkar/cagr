@@ -9,10 +9,10 @@ namespace utility {
 void enter_and_exit();
 std::string insert_commas(double number);
 
-bool is_int(std::string input);
-bool is_double(std::string input);
-int get_int();
-double get_double();
+bool is_int(const std::string &input);
+bool is_double(const std::string &input);
+void get_int(int &number);
+void get_double(double &number);
 
 }  // namespace utility
 

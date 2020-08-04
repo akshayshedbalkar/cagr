@@ -21,7 +21,7 @@ void Fund::greeting(const double tax_rate, const double inflation, const double 
 
 void Fund::set_increments() {
     std::cout << "How much to reinvest yearly? (0 for none): ";
-    increments = utility::get_double();
+    utility::get_double(increments);
 }
 
 void Fund::set_parameters() {
@@ -38,22 +38,22 @@ void Fund::set_parameters() {
 
 void Fund::set_capital() {
     std::cout << "Enter capital: ";
-    capital = utility::get_double();
+    utility::get_double(capital);
 }
 
 void Fund::set_current_return() {
     std::cout << "Enter current cumulative return: ";
-    cumulative_return = utility::get_double();
+    utility::get_double(cumulative_return);
     cumulative_return /= 100;
 }
 
 void Fund::set_years() {
     if (annual_return == 0) {
         std::cout << "Enter number of years already invested: ";
-        years = utility::get_double();
+        utility::get_double(years);
     } else {
         std::cout << "Enter number of years to invest: ";
-        years = utility::get_double();
+        utility::get_double(years);
         set_increments();
     }
 }
