@@ -3,7 +3,7 @@ Calculate future value of an investment
 
 The rate of return does not always reflect what you might get out of a stock or fund. Costs and inflation eat into your return, leading to a more realistic future. 
 
-In *cagr*, first the annual rate of return is calcualted. Then the future value of the investement after a number of years is shown. The result already deducts taxes and fees and adjusts the result for inflation. 
+In *cagr*, first the annual rate of return is calculated. Then the future value of the investement after a number of years is shown. The result already deducts taxes and fees and adjusts the result for inflation. 
 
 In addition the amount of money lost due to taxes and fees is printed. 
 
