@@ -1,0 +1,14 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "make",
+            "command": "C:\\ctags\\ninja.exe",
+            "args": [],
+            "options": {
+                "cwd": "${workspaceFolder}\\build"
+            },
+        }
+    ],
+    "version": "2.0.0"
+}
