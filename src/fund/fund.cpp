@@ -29,6 +29,7 @@ void Fund::set_parameters() {
     set_current_return();
     set_years();
     annual_return = calculate_return();
+
     std::cout << "\nAnnual return is: " << annual_return * 100 << "%\n";
     annual_return -= inflation;
     std::cout << "Annual return adjusted for inflation is: " << annual_return * 100 << "%\n";
