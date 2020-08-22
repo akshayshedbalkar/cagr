@@ -1,7 +1,5 @@
 ##Following subdirectories are part of the project
 add_subdirectory(include)
-#add_subdirectory(lib)
-# add_subdirectory(utility)
 
 ##All .h files in this directory are to be included
 target_include_directories(cagr 
