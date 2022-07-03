@@ -19,10 +19,11 @@ target_compile_features(cagr
     PRIVATE 
         cxx_std_17
 )
-# target_compile_options(cagr 
-#     PRIVATE 
-#         -Wall
-# )
+target_compile_options(cagr 
+    PRIVATE 
+        # -fprofile-arcs 
+        # -ftest-coverage
+)
 # target_compile_definitions(cagr 
 #      PRIVATE 
 #          foo
@@ -33,10 +34,11 @@ target_link_libraries(cagr
      PRIVATE 
         ${CMAKE_SOURCE_DIR}/extern/lib/libutility.a
  )
-# target_link_options(cagr 
-#      PRIVATE 
-#          blabla
-#  )
+target_link_options(cagr 
+     PRIVATE 
+        # -fprofile-arcs 
+        # -ftest-coverage
+ )
 
 ##Set target properties
 set_target_properties(cagr
