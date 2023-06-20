@@ -90,10 +90,12 @@ void Fund::display_fortune() {
     double taxes{calculate_taxes()};
     double fortune_after_taxes{fortune - taxes};
     double cost_of_fees{calculate_differential_fortune(annual_return + fees) - fortune};
+    double cost_of_inflation{calculate_differential_fortune(annual_return + inflation) - fortune};
 
     std::cout << "\nFortune after fees, taxes and adjusting for inflation is: $" << utility::insert_commas(fortune_after_taxes) << "\n";
     if (fortune) {
         std::cout << "Amount lost to taxes: $" << utility::insert_commas(taxes) << " or " << taxes * 100 / fortune << "%\n";
         std::cout << "Amount lost to fees: $" << utility::insert_commas(cost_of_fees) << " or " << cost_of_fees * 100 / fortune << "%\n";
+        std::cout << "Amount lost to inflation: $" << utility::insert_commas(cost_of_inflation) << " or " << cost_of_inflation * 100 / fortune << "%\n";
     }
 }
