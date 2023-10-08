@@ -89,13 +89,17 @@ double Fund::calculate_taxes() {
 void Fund::display_fortune() {
     double taxes{calculate_taxes()};
     double fortune_after_taxes{fortune - taxes};
+
+    double theoretical_fortune{calculate_differential_fortune(annual_return + inflation + fees)};
     double cost_of_fees{calculate_differential_fortune(annual_return + fees) - fortune};
     double cost_of_inflation{calculate_differential_fortune(annual_return + inflation) - fortune};
 
-    std::cout << "\nFortune after fees, taxes and adjusting for inflation is: $" << utility::insert_commas(fortune_after_taxes) << "\n";
-    if (fortune) {
-        std::cout << "Amount lost to taxes: $" << utility::insert_commas(taxes) << " or " << taxes * 100 / fortune << "%\n";
-        std::cout << "Amount lost to fees: $" << utility::insert_commas(cost_of_fees) << " or " << cost_of_fees * 100 / fortune << "%\n";
-        std::cout << "Amount lost to inflation: $" << utility::insert_commas(cost_of_inflation) << " or " << cost_of_inflation * 100 / fortune << "%\n";
+    std::cout << "\nResults:\n";
+    std::cout << "Theoretical fortune is: $" << utility::insert_commas(theoretical_fortune) << "\n";
+    std::cout << "Fortune after fees, taxes and adjusting for inflation is: $" << utility::insert_commas(fortune_after_taxes) << "\n\n";
+    if (theoretical_fortune) {
+        std::cout << "Amount lost to taxes: $" << utility::insert_commas(taxes) << " or " << taxes * 100 / theoretical_fortune << "%\n";
+        std::cout << "Amount lost to fees: $" << utility::insert_commas(cost_of_fees) << " or " << cost_of_fees * 100 / theoretical_fortune << "%\n";
+        std::cout << "Amount lost to inflation: $" << utility::insert_commas(cost_of_inflation) << " or " << cost_of_inflation * 100 / theoretical_fortune << "%\n";
     }
 }
